@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hello, world!</title>
+  <title>Pup Poker Parlor</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
+  <link rel="stylesheet" href="style.css"/>
+  <script src="index.js"></script>
 </head>
 <body>
 
-  <h1>Hello, world!</h1>
+  <h1 id="title"> Poker Parlor </h1>
+  
+  <h2 style="font-size: 25px; padding-left: 20px;">Add a player to the tournament</h2>
+  
+  <form id="submitForm">
+    <img id="randomDogImg" src="" height="200px" width="200px"><br>
+      <div id="formInfo">
+        <label for="dogName">Players Name:</label><br>
+        <input type="text" id="dogName" name="dogName"><br>
+        <label for="dogAge">Age (must be at least 3 years of age):</label><br>
+        <input type="text" id="dogAge" name="dogAge"><br>
+        <input type="submit" value="Submit" id="submitButton">
+      </div>
+  </form>
+
+  <div id="gameRoom">
+    <h1 style="padding-left: 275px;">Competitors</h1>
+
+   <div style="display: inline-block; margin: 100px;">
+    <h2 id="playerOneTitle">Player 1</h2>
+    <p id="playerOneName"></p>
+    <img id='playerOneImg' src="" alt="Player One" height="200px" width="200px">
+    <p>Hand Total:</p>
+    <form>
+      <input id="cardHandOne" type="text" value="0">
+    </form>
+    <button id="dealCardsOne">Deal Card</button>
+   </div>
+ 
+    <div style="display: inline-block; margin: 100px;">
+      <h2 id="plyerTwoTitle">Player 2</h2>
+      <p id="playerTwoName"></p>
+      <img id='playerTwoImg' src="" alt="Player Two" height="200px" width="200px">
+      <p>Hand Total:</p>
+      <form>
+        <input id="cardHandTwo" type="text" value="0">
+      </form>
+      <button id="dealCardsTwo">Deal Card</button>
+    </div>
+  </div><br>
+
+  <button id="refresh" style="margin-left: 20px;">New Picture</button>
+
+  <div id="playerRoster">
+    <h2>Player Roster</h2>
+  </div>
 
 </body>
 </html>  

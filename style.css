@@ -1,0 +1,59 @@
+body {
+    background-color: #342c53;
+    color: #F8DDCF;
+}
+
+#title {
+    text-align: center;
+    font-size: 100px;
+}
+
+#submitButton {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#submitForm {
+    margin: 20px;
+    margin-left: 40px;
+    width: min-content;
+    background-color: #864764;
+    display: inline-block;
+    position: relative;
+    bottom: 430px;
+
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#refresh {
+    position: relative;
+    bottom: 530px;
+    left: 75px;
+}
+
+#gameRoom {
+    width: 750px;
+    background-color: #a7857d;
+    text-shadow: 3px 3px 1px #1B133E;
+    position: relative;
+    margin-left: 275px;
+    display: inline-block;
+    padding: 10px;
+    bottom: 40px;
+}
+
+#randomDogImg {
+    padding: 10px;
+}
+
+#formInfo {
+    padding: 10px;
+}
+
+#playerRoster {
+    background-color: #864764;
+}

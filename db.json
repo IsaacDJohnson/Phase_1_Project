@@ -1,0 +1,22 @@
+{
+  "dogs": [
+    {
+      "name": "Molly",
+      "imgUrl": "https://random.dog/acac6445-5755-45be-bb48-941bda78b5d9.jpg",
+      "age": "6",
+      "id": 1
+    },
+    {
+      "name": "duke",
+      "imgUrl": "https://random.dog/5cf38fd0-5d33-4d1e-bce7-6b158a4d7fd2.jpg",
+      "age": "7",
+      "id": 2
+    },
+    {
+      "name": "Jimbo",
+      "imgUrl": "https://random.dog/5cf38fd0-5d33-4d1e-bce7-6b158a4d7fd2.jpg",
+      "age": "12",
+      "id": 3
+    }
+  ]
+}
