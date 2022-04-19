@@ -31,7 +31,7 @@ function randomDogGet(){
         document.getElementById('randomDogImg').src = `${data.url}`
     })
     .catch((error)=>{
-        console.log(error)
+        alert(error)
     })
 }
 
@@ -71,7 +71,6 @@ function formPost(event){
      .catch(()=>{
         alert('Form Post ERROR')
     }) 
-    event.reset
 }
 
 function newRosterForm(event){
@@ -112,7 +111,6 @@ function newRosterForm(event){
         }
 
     }
-    
 }
 
 function dealCardOne(){
