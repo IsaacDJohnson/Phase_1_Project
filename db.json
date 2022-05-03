@@ -1,16 +1,4 @@
 {
   "dogs": [
-    {
-      "name": "Molly",
-      "imgUrl": "https://random.dog/94830009-5fb0-4d95-b3ba-c1bf2bae27ce.JPG",
-      "age": "6",
-      "id": 1
-    },
-    {
-      "name": "duke",
-      "imgUrl": "https://random.dog/94830009-5fb0-4d95-b3ba-c1bf2bae27ce.JPG",
-      "age": "5",
-      "id": 2
-    }
   ]
 }

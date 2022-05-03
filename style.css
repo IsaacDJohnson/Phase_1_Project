@@ -50,3 +50,7 @@ button {
 #formInfo {
     padding: 10px;
 }
+
+.new-list-item {
+    list-style-type: none
+}

@@ -42,6 +42,10 @@ function addEventListeners(){
     document.getElementById('refresh').addEventListener('click', randomDogGet)
 }
 
+resetForm = () => {
+    document.getElementById('submitForm').reset();
+}
+
 function formPost(event){
     
     event.preventDefault()
@@ -67,23 +71,24 @@ function formPost(event){
 
      fetch('http://localhost:3000/dogs', configurationObject)
      .catch(()=>{
-        console.log('Form Post ERROR')
+        alert('Form Post ERROR')
     }) 
     randomDogGet()
 }
 
 function newRosterForm(event){
-      
+    
     const dogName = document.getElementById('dogName').value
     const age = document.getElementById('dogAge').value
     const dogImg = document.getElementById('randomDogImg').src
     const roster = document.getElementById('rosterList')   
     const listItem = document.createElement('li')
-    const node = document.createTextNode('')
+    listItem.className = 'new-list-item'
+    // const node = document.createTextNode('')
         
-    listItem.appendChild(node)
+    // listItem.appendChild(node)
     
-    listItem.innerHTML = `<div class='card' style='float: left'; margin-left:40px; align:top">
+    listItem.innerHTML = `<div class='card' style='float: left; margin-left:40px; align:top;'>
                           <img src='${dogImg} 'height='200px'' 'width='200px''><br>
                           <p> name: '${dogName}'</p>
                           <p> age: '${age}' </p>
@@ -99,33 +104,44 @@ function newRosterForm(event){
         document.getElementById('dealer').addEventListener('click', dealCards)
         const gameRoom = document.getElementById('gameTable')
         const newListItem = document.createElement('li')
+        newListItem.className = 'new-list-item'
         const newNode = document.createTextNode('')
         newListItem.appendChild(newNode)
         
         newListItem.innerHTML= 
         
-        `<div class='card' style='float: left'; margin:40px">
-        <img src='${dogImg} 'height='200px'' 'width='200px''><br>
-        <p> name: '${dogName}'</p>
-        <p> age: '${age}' </p>
-        <input type="text"; id='${dogName}'; value="0">
+        `<div class='card' style="float: left; margin: 50px;">
+        <img src='${dogImg}' height='200px' width='200px'><br>
+        name: <p class="dog-name">${dogName}</p>
+        age: <p>${age} </p>
+        <input type="text" class="card-total" id= ${dogName} value="0">
         </div>`
 
         gameRoom.appendChild(newListItem)
     
         function dealCards(){
-            let hand = document.getElementById(`${dogName}`)
-            let strTotal = hand.value
-            let total = parseInt(strTotal)
-            let randomNum = Math.random() * (10 - 1) + 1
-            let newTotal = total +++ Math.round(randomNum)
-            
-            if (total === 21){
-                alert(`21! ${dogName} wins!`)
-            } else if (total >= 22){
-                alert(`${dogName} loses!`)
-            } else {
-                hand.value = newTotal     
+            let [dogNameOne, dogNameTwo] = document.querySelectorAll('.dog-name')
+            let [dogTotalOne, dogTotalTwo] = document.querySelectorAll('.card-total')
+            // let handOne = document.getElementById(`${dogName}`)
+            // let handtwo = document.getElementById(`${dogName}`)
+
+            let strTotalOne = parseInt(dogTotalOne.value)
+            let strTotalTwo = parseInt(dogTotalTwo.value)
+
+            let randomNumOne = Math.random() * (10 - 1) + 1
+            let randomNumTwo = Math.random() * (10 - 1) + 1
+            dogTotalOne.value = Math.round(randomNumOne) + strTotalOne
+            dogTotalTwo.value = Math.round(randomNumTwo) + strTotalTwo
+
+            // debugger
+            if (parseInt(dogTotalOne.value) === 21 || parseInt(dogTotalTwo.value) === 21){
+                parseInt(dogTotalOne.value) === 21 ? alert(`21! ${dogNameOne.textContent} wins!`) : alert(`21! ${dogNameTwo.textContent} wins!`)
+    
+            } else if (parseInt(dogTotalOne.value) >= 22){
+                if (parseInt(dogTotalTwo.value) >= 22) {
+                    alert('Both dogs lost')
+                }
+                alert(`${dogNameOne.textContent} loses!`)
             }
         }
 
