@@ -2,39 +2,15 @@
   "dogs": [
     {
       "name": "Molly",
-      "imgUrl": "https://random.dog/3a772b3f-3333-4b34-bbb5-e567770d6c31.jpg",
-      "age": "5",
+      "imgUrl": "https://random.dog/94830009-5fb0-4d95-b3ba-c1bf2bae27ce.JPG",
+      "age": "6",
       "id": 1
     },
     {
       "name": "duke",
-      "imgUrl": "https://random.dog/3a772b3f-3333-4b34-bbb5-e567770d6c31.jpg",
-      "age": "6",
-      "id": 2
-    },
-    {
-      "name": "duke",
-      "imgUrl": "https://random.dog/ef2032c1-6d37-41de-b43f-d0cb2dc4ebd1.jpeg",
-      "age": "6",
-      "id": 3
-    },
-    {
-      "name": "duke",
-      "imgUrl": "https://random.dog/fe2263a2-75ea-437d-bec0-91a6bd7db11f.JPG",
-      "age": "6",
-      "id": 4
-    },
-    {
-      "name": "Duke",
-      "imgUrl": "https://random.dog/95cc7256-a4df-4aec-8ad1-35866a6329d5.PNG",
-      "age": "13",
-      "id": 5
-    },
-    {
-      "name": "Molly",
-      "imgUrl": "https://random.dog/e03b1dce-fe0c-4d47-a208-8f7c2a9ff57f.mp4",
+      "imgUrl": "https://random.dog/94830009-5fb0-4d95-b3ba-c1bf2bae27ce.JPG",
       "age": "5",
-      "id": 6
+      "id": 2
     }
   ]
 }

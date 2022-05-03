@@ -1,6 +1,6 @@
 body {
-    background-color: #342c53;
-    color: #F8DDCF;
+    background-color: #404f41;
+    color: #f5f5f5;
 }
 
 #title {
@@ -9,35 +9,32 @@ body {
 }
 
 #submitButton {
+    border-radius: 25px;
     margin-top: 20px;
     padding: 10px;
 }
 
 #submitForm {
+    border-radius: 10px;
     margin: 20px;
     margin-left: 40px;
     width: min-content;
-    background-color: #864764;
+    background-color: #da7536e1;
     display: inline-block;
     position: relative;
-    bottom: 430px;
 
 }
 
 button {
+    border-radius: 25px;
     margin-top: 20px;
     padding: 10px;
 }
-
-#refresh {
-    position: relative;
-    bottom: 530px;
-    left: 75px;
-}
-
+ 
 #gameRoom {
+    border-radius: 25px;
     width: 750px;
-    background-color: #a7857d;
+    background-color: #793c47;
     text-shadow: 3px 3px 1px #1B133E;
     position: relative;
     margin-left: 275px;
@@ -52,8 +49,4 @@ button {
 
 #formInfo {
     padding: 10px;
-}
-
-#playerRoster {
-    background-color: #864764;
 }

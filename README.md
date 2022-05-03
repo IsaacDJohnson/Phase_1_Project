@@ -25,4 +25,6 @@ NOTES-
 1. This specific program is a single page application that takes new information and persists it in a local db.json file.
 
 2. This program is an interactive page that mocks a scenario where dogs are playing BlackJack and keeps a roster of different dogs as players with statistics, as well 
-as "deal out cards" represented by numbers between 1 and 21, if the player has more than 21 they "lose" the game and an alert tells the user.
+as "deal out cards" represented by numbers between 1 and 21, if the player has more than 21 they "lose" and the game sends an alert to tell the user.
+
+3. Updated pallette to be more traditional for a 'poker' setting.

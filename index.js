@@ -23,12 +23,12 @@ function init(){
 
 function randomDogGet(){
     
-    fetch('https://random.dog/woof.json')
+    fetch('https://dog.ceo/api/breeds/image/random')
     .then((response) => {
         return response.json();
     })
     .then((data) => {
-        document.getElementById('randomDogImg').src = `${data.url}`
+        document.getElementById('randomDogImg').src = `${data.message}`
     })
     .catch((error)=>{
         alert(error)
@@ -40,8 +40,6 @@ function addEventListeners(){
     submitForm.addEventListener('submit', formPost)
     submitForm.addEventListener('submit', newRosterForm)
     document.getElementById('refresh').addEventListener('click', randomDogGet)
-    document.getElementById('dealCardsOne').addEventListener('click', dealCardOne)
-    document.getElementById('dealCardsTwo').addEventListener('click', dealCardTwo)   
 }
 
 function formPost(event){
@@ -69,73 +67,69 @@ function formPost(event){
 
      fetch('http://localhost:3000/dogs', configurationObject)
      .catch(()=>{
-        alert('Form Post ERROR')
+        console.log('Form Post ERROR')
     }) 
+    randomDogGet()
 }
 
 function newRosterForm(event){
       
-    const name = document.getElementById('dogName').value
+    const dogName = document.getElementById('dogName').value
     const age = document.getElementById('dogAge').value
     const dogImg = document.getElementById('randomDogImg').src
-    const roster = document.getElementById('playerRoster')   
+    const roster = document.getElementById('rosterList')   
     const listItem = document.createElement('li')
     const node = document.createTextNode('')
         
     listItem.appendChild(node)
     
-    listItem.innerHTML = `<div style="margin: 20px;">
+    listItem.innerHTML = `<div class='card' style='float: left'; margin-left:40px; align:top">
                           <img src='${dogImg} 'height='200px'' 'width='200px''><br>
-                          <p> name: '${name}'</p>
+                          <p> name: '${dogName}'</p>
                           <p> age: '${age}' </p>
-                          <button id='${name}'>add to game</button>
+                          <button id='${dogName}'>add ${dogName} to game</button>
                           </div>`
 
     roster.appendChild(listItem)
 
-    document.getElementById(`${name}`).addEventListener('click', addPlayerToGame)
+    document.getElementById(`${dogName}`).addEventListener('click', createPlayer)
     
-    function addPlayerToGame(){
+    function createPlayer(){
+        
+        document.getElementById('dealer').addEventListener('click', dealCards)
+        const gameRoom = document.getElementById('gameTable')
+        const newListItem = document.createElement('li')
+        const newNode = document.createTextNode('')
+        newListItem.appendChild(newNode)
+        
+        newListItem.innerHTML= 
+        
+        `<div class='card' style='float: left'; margin:40px">
+        <img src='${dogImg} 'height='200px'' 'width='200px''><br>
+        <p> name: '${dogName}'</p>
+        <p> age: '${age}' </p>
+        <input type="text"; id='${dogName}'; value="0">
+        </div>`
 
-        let playerOneName = document.getElementById('playerOneName')
-        let playerTwoName = document.getElementById('playerTwoName')
-        let playerOne = document.getElementById('playerOneImg')
-        let playerTwo = document.getElementById('playerTwoImg')
-
-        if (playerOneName.innerText === ''){
-            playerOne.src = dogImg
-            playerOneName.innerText = `${name}`
-        } else {
-            playerTwo.src = dogImg
-            playerTwoName.innerText = `${name}`
+        gameRoom.appendChild(newListItem)
+    
+        function dealCards(){
+            let hand = document.getElementById(`${dogName}`)
+            let strTotal = hand.value
+            let total = parseInt(strTotal)
+            let randomNum = Math.random() * (10 - 1) + 1
+            let newTotal = total +++ Math.round(randomNum)
+            
+            if (total === 21){
+                alert(`21! ${dogName} wins!`)
+            } else if (total >= 22){
+                alert(`${dogName} loses!`)
+            } else {
+                hand.value = newTotal     
+            }
         }
 
     }
 }
-
-function dealCardOne(){
-    let hand = document.getElementById('cardHandOne')
-    let total = hand.value
-    let randomNum = Math.random() * (10 - 1) + 1
-    let newTotal = total +++ Math.round(randomNum)
-    
-    if (total <= 20){
-        hand.value = newTotal     
-    } else if (total >= 21){
-        alert('Player one loses')
-    }
-}
-function dealCardTwo(){
-    let hand = document.getElementById('cardHandTwo')
-    let total = hand.value
-    let randomNum = Math.random() * (10 - 1) + 1
-    let newTotal = total +++ Math.round(randomNum)
-    
-    if (total <= 20){
-        hand.value = newTotal
-    } else if (total >= 20){
-        alert('Player Two loses')
-    }
-}
-
 document.addEventListener('DOMContentLoaded', init)
+
